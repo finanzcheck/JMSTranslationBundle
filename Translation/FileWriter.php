@@ -43,7 +43,8 @@ class FileWriter
     }
 
     /**
-     * @param \JMS\TranslationBundle\Model\MessageCatalogue $domain
+     * @param \JMS\TranslationBundle\Model\MessageCatalogue $catalogue
+     * @param $domain
      * @param $filePath
      * @param $format
      * @throws \JMS\TranslationBundle\Exception\InvalidArgumentException
