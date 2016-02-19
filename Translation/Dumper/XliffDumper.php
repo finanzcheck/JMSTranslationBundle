@@ -33,7 +33,7 @@ use JMS\TranslationBundle\Model\MessageCatalogue;
 class XliffDumper implements DumperInterface
 {
     private $sourceLanguage = 'en';
-    private $addDate = true;
+    private $addDate = false;
 
     /**
      * @param $bool
@@ -114,6 +114,7 @@ class XliffDumper implements DumperInterface
             }
 
             // As per the OASIS XLIFF 1.2 non-XLIFF elements must be at the end of the <trans-unit>
+            /**
             if ($sources = $message->getSources()) {
                 foreach ($sources as $source) {
                     if ($source instanceof FileSource) {
@@ -132,7 +133,7 @@ class XliffDumper implements DumperInterface
 
                     $unit->appendChild($doc->createElementNS('jms:reference', (string) $source));
                 }
-            }
+            }**/
 
             if ($meaning = $message->getMeaning()) {
                 $unit->setAttribute('extradata', 'Meaning: '.$meaning);
